@@ -10,6 +10,7 @@
       <ion-label stacked>Nome*</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
+    <!--Mostra erro de validação e marca de vermelho class="danger" -->
     <p class="danger" *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left>Valor inválido</p>
     <ion-item>
       <ion-label stacked>Email*</ion-label>
@@ -88,6 +89,7 @@
         <ion-option *ngFor="let cidade of cidades" [value]="cidade.id"> {{cidade.nome}} </ion-option>
       </ion-select>
     </ion-item>
+    <!--Desabilita botão se o formulario não esta totalmente preenchido-->
     <button ion-button block type="submit" [disabled]="formGroup.invalid">Criar conta</button>
   </form>
 </ion-content>
